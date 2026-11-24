@@ -1,0 +1,51 @@
+// ========================================
+// 1. BOOTSTRAP FUNCTIONS
+// ========================================
+
+@import "bootstrap/scss/functions";
+
+
+// ========================================
+// 2. CUSTOM BOOTSTRAP VARIABLES
+// ========================================
+
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #198754;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #0dcaf0;
+$light: #f8f9fa;
+$dark: #212529;
+
+// Typography
+$font-family-sans-serif: Arial, sans-serif;
+
+// Border radius
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+
+
+// ========================================
+// 3. BOOTSTRAP VARIABLES AND MIXINS
+// ========================================
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+
+// ========================================
+// 4. BOOTSTRAP
+// ========================================
+
+@import "bootstrap/scss/bootstrap";
+
+
+// ========================================
+// 5. FONT AWESOME
+// ========================================
+
+@import "@fortawesome/fontawesome-free/css/all.min.css";

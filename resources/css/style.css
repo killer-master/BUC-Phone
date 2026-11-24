@@ -1,0 +1,358 @@
+/* =================================
+   GENERAL STYLES
+================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* =================================
+   CUSTOM COLORS
+================================= */
+
+:root {
+    /* Main colours */
+    --black: #080D1A;
+    --blue: #142B50;
+    /* --blue: #0588ce; */
+    --red: #B21F32;
+    --gold: #D6AD55;
+    --white: #F8F6F0;
+}
+
+/* =================================
+   CUSTOM BUTTONS
+================================= */
+
+.custom-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.custom-btn:hover {
+    opacity: 0.85;
+}
+
+/* =================================
+   HOMEPAGE CAROUSEL
+================================= */
+
+.buc-carousel {
+    position: relative;
+    height: calc(100svh - 82px);
+    min-height: 430px;
+    overflow: hidden;
+    background: var(--black);
+}
+
+.buc-carousel .carousel-inner,
+.buc-carousel .carousel-item {
+    height: 100%;
+}
+
+.buc-carousel-image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.buc-carousel-item,
+.buc-carousel .carousel-item {
+    background: var(--black);
+}
+
+.buc-carousel-shade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(8, 13, 26, .88) 0%, rgba(8, 13, 26, .52) 42%, rgba(8, 13, 26, .08) 75%),
+        linear-gradient(0deg, rgba(8, 13, 26, .38), transparent 45%);
+}
+
+.buc-slide-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 5rem);
+    padding: clamp(1.5rem, 7vw, 7rem);
+}
+
+.buc-slide-copy {
+    max-width: 34rem;
+    text-align: left;
+}
+
+.buc-slide-visual {
+    display: grid;
+    height: min(70%, 38rem);
+    min-height: 0;
+    place-items: center;
+}
+
+.buc-slide-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.buc-carousel-eyebrow {
+    display: block;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: clamp(.72rem, 1vw, .86rem);
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.buc-slide-copy h1 {
+    margin: 0 0 1rem;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.8rem, 6vw, 6.2rem);
+    font-weight: 600;
+    line-height: .92;
+    letter-spacing: 0;
+}
+
+.buc-slide-copy p {
+    max-width: 29rem;
+    margin: 0 0 1.7rem;
+    color: rgba(255, 255, 255, .82);
+    font-size: clamp(.95rem, 1.25vw, 1.12rem);
+    line-height: 1.65;
+}
+
+.buc-carousel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    min-height: 3.25rem;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 999px;
+    padding: .78rem 1.15rem .78rem 1.35rem;
+    background: #fff;
+    color: var(--black);
+    font-size: .88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.buc-carousel-cta i {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.buc-carousel-cta:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: var(--black);
+}
+
+.buc-carousel-control {
+    width: clamp(3.25rem, 5vw, 4.25rem);
+    opacity: 1;
+}
+
+.buc-carousel-control-icon {
+    display: grid;
+    width: clamp(2.75rem, 4vw, 3.25rem);
+    height: clamp(2.75rem, 4vw, 3.25rem);
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 50%;
+    background: rgba(8, 13, 26, .38);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.buc-carousel-control {
+    z-index: 30;
+}
+
+.buc-carousel-control:hover .buc-carousel-control-icon {
+    background: var(--gold);
+    color: var(--black);
+    transform: scale(1.05);
+}
+
+.buc-carousel-indicators {
+    right: clamp(1.5rem, 7vw, 7rem);
+    bottom: 2.1rem;
+    left: auto;
+    width: auto;
+    margin: 0;
+    gap: .5rem;
+}
+
+.buc-carousel-indicators [data-bs-target] {
+    width: .55rem;
+    height: .55rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .55);
+    opacity: 1;
+}
+
+.buc-carousel-indicators .active {
+    width: 1.8rem;
+    border-radius: 999px;
+    background: var(--gold);
+}
+
+.buc-carousel-progress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    height: 4px;
+    background: rgba(255, 255, 255, .16);
+}
+
+.buc-carousel-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    background: var(--gold);
+}
+
+.buc-carousel-progress span.is-running {
+    animation: buc-slide-progress 8s linear forwards;
+}
+
+@keyframes buc-slide-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@media (max-width: 991.98px) {
+    .buc-carousel {
+        height: calc(100svh - 72px);
+    }
+
+    .buc-slide-content {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+        gap: 1.5rem;
+        padding: 4rem clamp(4rem, 7vw, 5.5rem);
+    }
+
+    .buc-carousel-control {
+        width: 3.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .buc-carousel {
+        height: calc(100svh - 72px);
+        min-height: 520px;
+    }
+
+    .buc-carousel-image {
+        object-position: 58% center;
+    }
+
+    .buc-carousel-shade {
+        background:
+            linear-gradient(0deg, rgba(8, 13, 26, .88) 0%, rgba(8, 13, 26, .48) 48%, rgba(8, 13, 26, .12) 100%),
+            linear-gradient(90deg, rgba(8, 13, 26, .35), transparent);
+    }
+
+    .buc-slide-content {
+        grid-template-columns: 1fr;
+        align-content: center;
+        gap: 1rem;
+        padding: 1.25rem 1.25rem 5.5rem;
+    }
+
+    .buc-slide-copy {
+        max-width: none;
+    }
+
+    .buc-slide-visual {
+        height: min(30svh, 15rem);
+    }
+
+    .buc-slide-copy h1 {
+        font-size: clamp(2.45rem, 13vw, 4rem);
+        line-height: .94;
+    }
+
+    .buc-slide-copy p {
+        max-width: 21rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.45;
+    }
+
+    .buc-carousel-cta {
+        min-height: 3rem;
+        padding: .65rem .75rem .65rem 1rem;
+    }
+
+    .buc-carousel-control {
+        top: auto;
+        bottom: 1.2rem;
+        width: 3.25rem;
+    }
+
+    .buc-carousel-control-prev {
+        right: 4.25rem;
+        left: auto;
+    }
+
+    .buc-carousel-control-next {
+        right: .75rem;
+    }
+
+    .buc-carousel-indicators {
+        right: auto;
+        bottom: 2.1rem;
+        left: 1.25rem;
+    }
+
+    .buc-carousel-progress {
+        height: 3px;
+    }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+    .buc-carousel {
+        min-height: 360px;
+    }
+
+    .buc-slide-content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .buc-slide-copy h1 {
+        font-size: clamp(2.2rem, 7vw, 4.2rem);
+    }
+
+    .buc-slide-copy p {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buc-carousel-control-icon,
+    .buc-carousel-cta {
+        transition: none;
+    }
+}
